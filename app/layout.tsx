@@ -8,9 +8,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "RateMyProfessor.space - AI Professor Review Generator | Create Authentic College Reviews",
-  description:
-    "Generate authentic professor reviews instantly with AI. Create natural, engaging reviews for RateMyProfessor, Reddit, and academic forums. No registration required - 10,000+ reviews generated.",
+  title: "AI-Powered Professor Review Generator for Students",
+  description: "Generate authentic professor reviews effortlessly with AI! Share insights on RateMyProfessor and academic forums without any registration.",
   keywords: [
     "professor review generator",
     "rate my professor",
