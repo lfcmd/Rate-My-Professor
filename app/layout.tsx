@@ -1,11 +1,14 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Lora } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/theme-provider"
+import { MainHeader } from "@/app/components/main-header"
+import { Footer } from "@/app/components/footer"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const lora = Lora({ subsets: ["latin"], variable: "--font-serif" })
 
 export const metadata: Metadata = {
   title: "AI-Powered Professor Review Generator for Students",
@@ -71,9 +74,13 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#3b82f6" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${lora.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          {children}
+          <div className="flex flex-col min-h-screen">
+            <MainHeader />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
           <Toaster />
         </ThemeProvider>
       </body>

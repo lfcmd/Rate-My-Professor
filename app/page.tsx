@@ -293,89 +293,13 @@ export default function ProfessorReviewGenerator() {
 
   // The main component render method
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-4">
-              <a href="#" className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-                  <BarChart3 className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold text-gray-900">RateMyProfessor.space</span>
-              </a>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
-                Features
-              </a>
-              <a href="#benefits" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
-                Benefits
-              </a>
-              <a href="#faq" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
-                FAQ
-              </a>
-            </div>
-            <div className="hidden md:flex items-center">
-              <Button onClick={() => document.getElementById("generator")?.scrollIntoView({ behavior: "smooth" })}>
-                Get Started
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </Button>
-            </div>
-            <div className="md:hidden flex items-center">
-              <Button variant="ghost" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <Menu className="w-6 h-6" />
-              </Button>
-            </div>
-          </div>
-        </div>
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a
-                href="#features"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Features
-              </a>
-              <a
-                href="#benefits"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Benefits
-              </a>
-              <a
-                href="#faq"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                FAQ
-              </a>
-              <div className="px-2 pt-2">
-                <Button
-                  className="w-full"
-                  onClick={() => {
-                    document.getElementById("generator")?.scrollIntoView({ behavior: "smooth" })
-                    setIsMenuOpen(false)
-                  }}
-                >
-                  Get Started
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
-      </nav>
-
+    <div className="min-h-screen bg-gray-50">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 sm:py-28 lg:py-32 bg-gradient-to-br from-gray-50 to-slate-100">
+        <section className="py-20 sm:py-28 lg:py-32 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
-              AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Rate My Professor</span> for College Students
+              AI <span className="text-primary">Rate My Professor</span> for College Students
             </h1>
             <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-600 leading-relaxed mb-10">
               Create authentic, engaging professor reviews instantly using advanced AI technology. Perfect for RateMyProfessor, Reddit, academic forums, and student communities. No registration required.
@@ -393,7 +317,7 @@ export default function ProfessorReviewGenerator() {
         </section>
 
         {/* What can you do with this Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+        <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">

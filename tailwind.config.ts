@@ -1,17 +1,23 @@
 import type { Config } from "tailwindcss";
 
-// all in fixtures is set to tailwind v3 as interims solutions
+const { fontFamily } = require("tailwindcss/defaultTheme")
 
-const config: Config = {
-    darkMode: ["class"],
-    content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "*.{js,ts,jsx,tsx,mdx}"
-  ],
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
+  prefix: "",
   theme: {
   	extend: {
+  		fontFamily: {
+  			sans: ["var(--font-sans)", ...fontFamily.sans],
+  			serif: ["var(--font-serif)", ...fontFamily.serif],
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -90,9 +96,11 @@ const config: Config = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
-  	}
+  		},
+      screens: {
+        "2xl": "1400px",
+      },
+    },
   },
   plugins: [require("tailwindcss-animate")],
 };
-export default config;
