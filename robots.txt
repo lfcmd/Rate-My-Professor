@@ -1,0 +1,5 @@
+robots.txt for https://www.ratemyprofessor.space/
+
+User-agent: *Disallow: /admin/Disallow: /login/Disallow: /register/Disallow: /private/Allow: /
+
+Sitemap: https://www.ratemyprofessor.space/sitemap.xml
