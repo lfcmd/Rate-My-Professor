@@ -1,14 +1,15 @@
-"use client"
+ "use client"
 
 import { articles } from "@/lib/blog-articles"
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import Link from "next/link"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 export default function BlogPage() {
   return (
@@ -28,11 +29,12 @@ export default function BlogPage() {
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                <Card>
-                  <CardContent className="prose max-w-none pt-6">
-                    {article.content}
-                  </CardContent>
-                </Card>
+                <Link
+                  href={`/blog/${article.id}`}
+                  className={cn(buttonVariants({ variant: "outline" }), "mt-4")}
+                >
+                  Read Full Article
+                </Link>
               </AccordionContent>
             </AccordionItem>
           ))}
@@ -40,4 +42,4 @@ export default function BlogPage() {
       </div>
     </div>
   )
-} 
+}
